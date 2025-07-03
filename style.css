@@ -1,0 +1,31 @@
+:root{
+  --fs-xxl:5rem;
+  --fs-xl:4rem;
+  --fs-lg:3rem;
+  --fs-md:2rem;
+  --fs-sm:1rem;
+  --fs-xs:0.5rem;
+}
+
+*{
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Minecrafteria';
+  src: url("../../../../../Computer/Fonts/minecraftia/Minecraftia-Regular.ttf");
+}
+body{
+  background-color: #2e2e2e; 
+  color: #ffffff;
+  border-color: #8b8b8b; 
+  font-family: 'Minecrafteria',  'Press Start 2P', monospace;
+}
+header,main,footer,section{
+  display: flex;
+}
+header{
+  justify-content: center;
+}
+.title{
+  font-size:var(--fs-lg);
+}
