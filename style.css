@@ -32,11 +32,22 @@ header,main,footer,section{
 }
 header{
   justify-content: center;
+  flex-direction: column;
 }
 .title{
-  width: 60%;
-  height: 10%;
+  display: flex;
+  height: 60px;
+
 }
+.title img{
+  height: 100%;
+  width: auto;
+}
+.upper-title .middle-bar{
+  height: 20px;
+}
+
+
 
 
   
