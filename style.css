@@ -36,6 +36,7 @@ header{
 }
 .title{
   display: flex;
+  flex-direction: row;
   height: 60px;
 
 }
@@ -43,8 +44,15 @@ header{
   height: 100%;
   width: auto;
 }
+.upper-title{
+  display: flex;
+  align-items: center;
+}
 .upper-title .middle-bar{
   height: 20px;
+}
+.middle-bar img{
+  height:20px;
 }
 
 
