@@ -48,6 +48,13 @@ header{
   display: flex;
   align-items: center;
 }
+.upper-title img{
+  opacity: 0.8;
+}
+.upper-title img:hover{
+  opacity: 1;
+  transition: 3s;
+}
 .upper-title .middle-bar{
   height: 20px;
 }

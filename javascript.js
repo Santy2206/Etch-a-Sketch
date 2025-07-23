@@ -1,28 +1,22 @@
-eTitle=document.querySelector('[data-e]')
-tTitle=document.querySelector('[data-t]')
-cTitle=document.querySelector('[data-c]')
-hTitle=document.querySelector('[data-h]')
-middleBarTitle=document.querySelector('[data-middle-bar]')
-aTitle=document.querySelector('[data-a]')
-sTitle=document.querySelector('[data-s]')
-kTitle=document.querySelector('[data-k]')
+const letters=['e','t','c','h','middlebar','s','k',]
+letters.forEach(letter=>{
+  let selector=`[data-${letter}]`
+  let elements=document.querySelectorAll(selector)
+    elements.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+      // Capitalize for Transformed-Title
+      const capitalized = letter.toUpperCase();
+      el.src = `Images/Transformed-Title/${capitalized}.png`;
+    });
 
-
-
-  eTitle.addEventListener("mouseenter", () => {
-    eTitle.src = "Images/Transformed-Title/E.png"; 
+    el.addEventListener("mouseleave", () => {
+      // Lowercase for normal Title
+      const lowercased = letter.toLowerCase();
+      el.src = `Images/Title/${lowercased}.png`;
+      el.style.transform = "translateX(3px)";
+    });
   });
 
-  eTitle.addEventListener("mouseleave", () => {
-    eTitle.src = "Images/Title/e.png"; 
-    eTitle.style.transform="translateX(3px)"
-  });
+  })
 
-  tTitle.addEventListener("mouseenter", () => {
-    tTitle.src = "Images/Transformed-Title/T.png"; 
-  });
-
-  tTitle.addEventListener("mouseleave", () => {
-    tTitle.src = "Images/Title/t.png"; 
-    tTitle.style.transform="translateX(3px)"
-  });
+  
