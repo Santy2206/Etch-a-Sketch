@@ -18,8 +18,7 @@
 body {
   background-color: #1e1e1e;
   margin: 0;
-  height: 100vh;
-  display: flex; 
+  height: 100vh; 
   color: #ffffff;
   border-color: #8b8b8b; 
   font-family: 'Minecrafteria',  'Press Start 2P', monospace;
@@ -29,6 +28,7 @@ body {
 }
 header,main,footer,section{
   display: flex;
+  padding: var(--fs-xs)var(--fs-xxl);
 }
 header{
   justify-content: center;
@@ -38,6 +38,8 @@ header{
   display: flex;
   flex-direction: row;
   height: 60px;
+  justify-content: center;
+  margin-top: var(--fs-md);
 
 }
 .title img{
@@ -62,7 +64,18 @@ header{
   height:20px;
 }
 
+main{
+  
+}
+.buttons{
+  flex-direction: column;
+  width: 50%;
 
+}
+.grid{
+  width: 50%;
+  background-color: beige;
+}
 
 
   
