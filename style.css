@@ -26,19 +26,17 @@ body {
 
 
 }
-header,main,footer,section{
+header,main,footer,section,article{
   display: flex;
   padding: var(--fs-xs)var(--fs-xxl);
 }
 header{
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .title{
   display: flex;
-  flex-direction: row;
-  height: 60px;
-  justify-content: center;
+  flex-direction: column;
   margin-top: var(--fs-md);
 
 }
@@ -49,6 +47,7 @@ header{
 .upper-title{
   display: flex;
   align-items: center;
+  height: 60px;
 }
 .upper-title img{
   opacity: 0.8;
@@ -63,17 +62,25 @@ header{
 .middle-bar img{
   height:20px;
 }
+.lower-title{
+  display: flex;
+  justify-content: center;
+  height: 30px;
+}
 
 main{
   
 }
 .buttons{
+  width: 33.3%;
   flex-direction: column;
-  width: 50%;
-
+  align-items: center;
+}
+.buttons article{
+  flex-direction: column;
 }
 .grid{
-  width: 50%;
+  width: 33.3%;
   background-color: beige;
 }
 
