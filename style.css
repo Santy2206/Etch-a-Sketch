@@ -78,11 +78,24 @@ main{
 }
 .buttons article{
   flex-direction: column;
+  gap: var(--fs-sm);
 }
 .grid{
   width: 33.3%;
   background-color: beige;
 }
-
+input,button{
+  border-radius: 15%;
+}
+input{
+  padding: 0rem;
+  width: var(--fs-xxl);
+  height: var(--fs-xxl);
+  background-color: transparent;
+  border: none;
+}
+button{
+  height: var(--fs-sm);
+}
 
   
