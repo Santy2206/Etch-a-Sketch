@@ -9,6 +9,7 @@
 
 *{
   box-sizing: border-box;
+  border: 0.5px red solid;
 }
 @font-face {
   font-family: 'Minecrafteria';
@@ -23,12 +24,14 @@ body {
   border-color: #8b8b8b; 
   font-family: 'Minecrafteria',  'Press Start 2P', monospace;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap:var(--fs-sm)
 
 
 }
-header,main,footer,section,article{
+header,footer,section,article{
   display: flex;
-  padding: var(--fs-xs)var(--fs-xxl);
 }
 header{
   flex-direction: column;
@@ -69,23 +72,22 @@ header{
 }
 
 main{
-  
+  display: flex;
+  justify-content: space-around;  
 }
 .buttons{
-  width: 33.3%;
   flex-direction: column;
   align-items: center;
+  width: 30%;
 }
 .buttons article{
   flex-direction: column;
   gap: var(--fs-sm);
 }
 .grid{
-  width: 33.3%;
+  width: 40%;
   background-color: beige;
-}
-input,button{
-  border-radius: 15%;
+  height: 65vh;
 }
 input{
   padding: 0rem;
@@ -93,9 +95,11 @@ input{
   height: var(--fs-xxl);
   background-color: transparent;
   border: none;
+  border-radius: 30%;
 }
 button{
-  height: var(--fs-sm);
+  display: flex;
+  border-radius: 10%;
 }
 
   
