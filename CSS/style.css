@@ -13,7 +13,7 @@
 }
 @font-face {
   font-family: 'Minecrafteria';
-  src: url("../../../../../Computer/Fonts/minecraftia/Minecraftia-Regular.ttf");
+  src: url("../../../../../../Computer/Fonts/minecraftia/Minecraftia-Regular.ttf");
 }
 
 body {
@@ -50,7 +50,7 @@ header{
 .upper-title{
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 10vh;
 }
 .upper-title img{
   opacity: 0.8;
@@ -99,7 +99,8 @@ input{
 }
 button{
   display: flex;
-  border-radius: 10%;
+  font-size: var(--fs-sm);
+  border-radius: 5%;
 }
 
   

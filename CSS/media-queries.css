@@ -1,0 +1,92 @@
+:root {
+  /* Default for 1024px */
+  --fs-xxl: 5rem;
+  --fs-xl: 4rem;
+  --fs-lg: 3rem;
+  --fs-md: 2rem;
+  --fs-sm: 1rem;
+  --fs-xs: 0.5rem;
+}
+/* ✅ 2560px and larger screens (like 4K monitors) */
+@media (min-width: 2560px) {
+  :root {
+    --fs-xxl: 8rem;
+    --fs-xl: 6.5rem;
+    --fs-lg: 5rem;
+    --fs-md: 3.5rem;
+    --fs-sm: 1.75rem;
+    --fs-xs: 0.9rem;
+  }
+}
+
+/* 2560px and up — upscale */
+@media (min-width: 1920px) {
+  :root {
+    --fs-xxl: 7rem;
+    --fs-xl: 6rem;
+    --fs-lg: 4.5rem;
+    --fs-md: 3rem;
+    --fs-sm: 1.5rem;
+    --fs-xs: 0.75rem;
+  }
+}
+
+/* 1440px – slightly larger */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  :root {
+    --fs-xxl: 6rem;
+    --fs-xl: 5rem;
+    --fs-lg: 3.75rem;
+    --fs-md: 2.5rem;
+    --fs-sm: 1.25rem;
+    --fs-xs: 0.65rem;
+  }
+}
+
+/* 768px – scale down */
+@media (max-width: 1023px) {
+  :root {
+    --fs-xxl: 4rem;
+    --fs-xl: 3rem;
+    --fs-lg: 2.5rem;
+    --fs-md: 1.5rem;
+    --fs-sm: 0.875rem;
+    --fs-xs: 0.5rem;
+  }
+}
+
+/* 425px and smaller — mobile */
+@media (max-width: 768px) {
+  :root {
+    --fs-xxl: 3rem;
+    --fs-xl: 2.25rem;
+    --fs-lg: 1.75rem;
+    --fs-md: 1.25rem;
+    --fs-sm: 0.75rem;
+    --fs-xs: 0.4rem;
+  }
+}
+
+/* 375px and smaller */
+@media (max-width: 425px) {
+  :root {
+    --fs-xxl: 2.5rem;
+    --fs-xl: 2rem;
+    --fs-lg: 1.5rem;
+    --fs-md: 1rem;
+    --fs-sm: 0.7rem;
+    --fs-xs: 0.35rem;
+  }
+}
+
+/* 320px and smaller */
+@media (max-width: 375px) {
+  :root {
+    --fs-xxl: 2rem;
+    --fs-xl: 1.75rem;
+    --fs-lg: 1.25rem;
+    --fs-md: 0.875rem;
+    --fs-sm: 0.65rem;
+    --fs-xs: 0.3rem;
+  }
+}
