@@ -32,7 +32,7 @@
 }
 
 /* 1440px – slightly larger */
-@media (min-width: 1440px) and (max-width: 1919px) {
+@media (min-width: 1440px)  {
   :root {
     --fs-xxl: 6rem;
     --fs-xl: 5rem;
@@ -53,6 +53,9 @@
     --fs-sm: 0.875rem;
     --fs-xs: 0.5rem;
   }
+  .title{
+    height: 13vh;
+  }
 }
 
 /* 425px and smaller — mobile */
@@ -66,9 +69,9 @@
     --fs-xs: 0.4rem;
   }
   .title{
-  
-
+    height: 10vh;
   }
+  
 }
 
 /* 375px and smaller */
