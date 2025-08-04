@@ -80,11 +80,17 @@ main{
 .buttons{
   flex-direction: column;
   align-items: center;
+  gap: var(--fs-sm);
   width: 30%;
+}
+.buttons h2{
+  font-size: var(--fs-lg);
 }
 .buttons article{
   flex-direction: column;
   gap: var(--fs-sm);
+  align-items: center;
+  width: 80%;
 }
 .grid{
   width: 40%;
@@ -92,17 +98,25 @@ main{
   height: 65vh;
 }
 input{
+  width: 30%;
+  height: 15vh;
   padding: 0rem;
-  width: var(--fs-xxl);
-  height: var(--fs-xxl);
   background-color: transparent;
   border: none;
   border-radius: 30%;
 }
 button{
   display: flex;
-  font-size: var(--fs-sm);
-  border-radius: 5%;
+  font-size: var(--fs-md);
+  border-radius: 7%;
+  width: 50%;
+  background-color: transparent;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: white 2px ;
+}
+button:hover{
+  transform: ;
 }
 
   

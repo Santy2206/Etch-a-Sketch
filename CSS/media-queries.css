@@ -97,3 +97,14 @@
     --fs-xs: 0.3rem;
   }
 }
+
+@media (max-width: 320px) {
+  :root {
+    --fs-xxl: 1.75rem;   /* ~28px */
+    --fs-xl: 1.5rem;     /* ~24px */
+    --fs-lg: 1.125rem;   /* ~18px */
+    --fs-md: 0.875rem;   /* ~14px */
+    --fs-sm: 0.65rem;    /* ~10px */
+    --fs-xs: 0.3rem;     /* ~5px */
+  }
+}
