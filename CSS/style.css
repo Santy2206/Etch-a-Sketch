@@ -18,7 +18,7 @@ html , body{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
   font-family: 'Minecrafteria',  'Press Start 2P', monospace;
 }
 
@@ -73,6 +73,9 @@ header{
   justify-content: center;
   height: 35%;
 }
+.lower-title img:hover{
+  transform:scale(1.02);
+}
 
 main{
   display: flex;
@@ -106,6 +109,13 @@ input{
   border: none;
   border-radius: 30%;
 }
+input#sizeSlider{
+  border: none;
+  outline: none;
+  height: auto;
+  appearance: none;
+  color: gold;
+}
 button{
   display: flex;
   font-size: var(--fs-md);
@@ -114,11 +124,10 @@ button{
   background-color: transparent;
   justify-content: center;
   color: #ffffff;
-  transition:transform 0.2s ease-in-out;
+  transition:transform 0.4s ease-in-out;
 
 }
 button:hover{
   box-shadow: 0px 0px 10px 0.5px white;
   transform:scale(1.02);
-  transition:transform 0.4s ease-in-out;
 }
