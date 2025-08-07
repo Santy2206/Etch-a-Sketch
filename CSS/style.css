@@ -1,133 +1,209 @@
-:root{
-  --fs-xxl:5rem;
-  --fs-xl:4rem;
-  --fs-lg:3rem;
-  --fs-md:2rem;
-  --fs-sm:1rem;
-  --fs-xs:0.5rem;
+:root {
+  /* Font Sizes */
+  --fs-xxl: 5rem;
+  --fs-xl: 4rem;
+  --fs-lg: 3rem;
+  --fs-md: 2rem;
+  --fs-sm: 1rem;
+  --fs-xs: 0.5rem;
+
+  /* Minecraft Theme Colors */
+  --color-bg: #1e1e1e;
+  --color-accent: #8b8b8b;
+  --color-grid-bg: #f5f5dc;
+  --color-hover: #a4a4a4;
+  --color-active: #ffffff;
+  --color-shadow: rgba(255, 255, 255, 0.5);
+
+  /* Grid */
+  --grid-width: 40%;
+  --grid-height: 65vh;
+  --cell-border-color: #ccc;
+  --cell-size: 16px;
+
+  /* Buttons */
+  --button-bg: transparent;
+  --button-color: #fff;
+  --button-border-radius: 7%;
+
+  /* Shadows & Transitions */
+  --transition-fast: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+  --glow-effect: 0px 0px 7px 0.1px white;
+
+  /* Layout Gaps */
+  --gap-lg: 2rem;
+  --gap-md: 1rem;
+  --gap-sm: 0.5rem;
 }
-html , body{
+
+html, body {
   font-size: 62.5%;
   overflow-x: hidden;
 }
+
 @font-face {
   font-family: 'Minecrafteria';
   src: url("../../../../../../Computer/Fonts/minecraftia/Minecraftia-Regular.ttf");
 }
-*{
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: 1px solid red;
-  font-family: 'Minecrafteria',  'Press Start 2P', monospace;
+  font-family: 'Minecrafteria', 'Press Start 2P', monospace;
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: var(--color-bg);
   margin: 0;
-  color: #ffffff;
-  border-color: #8b8b8b; 
-
+  color: var(--color-active);
+  border-color: var(--color-accent);
   flex-direction: column;
-  gap:var(--fs-md);
+  gap: var(--fs-md);
 }
-body,header,footer,section,article{
+
+body, header, footer, section, article {
   display: flex;
 }
-header{
+
+header {
   margin-top: var(--fs-md);
   flex-direction: column;
   align-items: center;
 }
-.title{
+
+.title {
   display: flex;
   flex-direction: column;
   height: 15vh;
   justify-content: center;
-
 }
-.title img{
+
+.title img {
   height: 100%;
   width: auto;
 }
-.upper-title{
+
+.upper-title {
   display: flex;
   align-items: center;
   height: 60%;
 }
-.upper-title img{
+
+.upper-title img {
   opacity: 0.8;
 }
-.upper-title img:hover{
+
+.upper-title img:hover {
   opacity: 1;
   transition: 3s;
 }
-.upper-title .middle-bar{
+
+.upper-title .middle-bar {
   height: 35%;
 }
-.middle-bar img{
-  height:100%;
+
+.middle-bar img {
+  height: 100%;
 }
-.lower-title{
+
+.lower-title {
   display: flex;
   justify-content: center;
   height: 35%;
 }
-.lower-title img:hover{
-  transform:scale(1.02);
+
+.lower-title img:hover {
+  transform: scale(1.02);
 }
 
-main{
+main {
   display: flex;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
-.buttons{
+
+.buttons {
   flex-direction: column;
   align-items: center;
-  gap: var(--fs-sm);
+  gap: var(--gap-sm);
   width: 30%;
 }
-.buttons h2{
+
+.buttons h2 {
   font-size: var(--fs-lg);
 }
-.buttons article{
+
+.buttons article {
   flex-direction: column;
-  gap: var(--fs-sm);
+  gap: var(--gap-sm);
   align-items: center;
   width: 80%;
 }
-.grid{
-  width: 40%;
-  background-color: beige;
-  height: 65vh;
+
+.grid {
+  width: var(--grid-width);
+  height: var(--grid-height);
+  background-color: var(--color-grid-bg);
 }
-input{
+
+input {
+  background-color: var(--button-bg);
+}
+
+input#colorPicker {
   width: 30%;
   height: 15vh;
   padding: 0rem;
-  background-color: transparent;
   border: none;
   border-radius: 30%;
 }
-input#sizeSlider{
+
+input#sizeSlider {
   border: none;
   outline: none;
   height: auto;
   appearance: none;
-  color: gold;
 }
-button{
+
+input[type='range'] {
+  appearance: none;
+  background-color: gray;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 25px;
+  background: white;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 25px;
+  margin-top: -8px;
+  background: black;
+}
+
+.size-value {
+  font-size: var(--fs-md);
+}
+
+button {
   display: flex;
   font-size: var(--fs-md);
-  border-radius: 7%;
+  border-radius: var(--button-border-radius);
   width: 50%;
-  background-color: transparent;
+  background-color: var(--button-bg);
   justify-content: center;
-  color: #ffffff;
-  transition:transform 0.4s ease-in-out;
-
+  color: var(--button-color);
+  transition: transform var(--transition-fast);
 }
-button:hover{
-  box-shadow: 0px 0px 10px 0.5px white;
-  transform:scale(1.02);
+
+button[data-active] {
+  box-shadow: var(--glow-effect);
+  transform: scale(1.02);
 }
