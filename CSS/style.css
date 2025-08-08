@@ -137,7 +137,7 @@ main {
 
 .buttons article {
   flex-direction: column;
-  gap: var(--gap-sm);
+  gap: var(--gap-lg);
   align-items: center;
   width: 80%;
 }
@@ -169,7 +169,7 @@ input#sizeSlider {
 
 input[type='range'] {
   appearance: none;
-  background-color: gray;
+  background-color: var(--color-bg);
 }
 
 input[type='range']::-webkit-slider-runnable-track {
