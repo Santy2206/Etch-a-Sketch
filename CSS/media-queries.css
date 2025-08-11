@@ -68,8 +68,19 @@
     --fs-sm: 0.75rem;
     --fs-xs: 0.4rem;
   }
+  .mobile{
+    display: flex;
+  }
+  .desktop{
+    display: none;
+  }
   .title{
     height: 10vh;
+  }
+  main{
+    flex-direction: column;
+    align-items: center;
+    gap: var(--fs-lg);
   }
   
 }

@@ -39,7 +39,7 @@
       </div>
     </header>
 
-    <main data-main>
+    <main class="desktop"data-main>
       <section class="buttons">
         <h2>Pincel</h2>
         <article>
@@ -57,6 +57,42 @@
       </section>
       <section class="grid">
         
+      </section>
+      <section class="buttons">
+        <h2>grid</h2>
+        <article>
+          <input id="colorPicker" type="color" value="#333333">
+          <div class="size-value">
+            <p>
+              <span>30</span>
+              x
+              <span>30</span>
+            </p>
+          </div>
+          <input data-size id="sizeSlider" type="range" value="16" min="1" max="64">
+          <button>
+            Clear
+          </button>
+        </article>
+      </section>
+    </main>
+    <main class="mobile"data-main>
+      <section class="grid">
+      </section>
+      <section class="buttons">
+        <h2>Pincel</h2>
+        <article>
+          <input id="colorPicker" type="color" value="#333333">
+          <button data-active>
+            Color Mode
+          </button>
+          <button>
+            Rainbow Mode 
+          </button>
+          <button>
+            Eraser
+          </button>
+        </article>
       </section>
       <section class="buttons">
         <h2>grid</h2>
