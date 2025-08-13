@@ -85,6 +85,9 @@
   .grid{
     width: 60%;
   }
+  .buttons{
+    width:45%;
+  }
   
 }
 
@@ -97,6 +100,9 @@
     --fs-md: 1rem;
     --fs-sm: 0.7rem;
     --fs-xs: 0.35rem;
+  }
+  .buttons{
+    width: 60%;
   }
 }
 
