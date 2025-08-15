@@ -60,14 +60,14 @@
 
 /* 425px and smaller — mobile */
 @media (max-width: 768px) {
-  :root {
+  /* :root {
     --fs-xxl: 3rem;
     --fs-xl: 2.25rem;
     --fs-lg: 1.75rem;
     --fs-md: 1.25rem;
     --fs-sm: 0.75rem;
     --fs-xs: 0.4rem;
-  }
+  } */
   .mobile{
     display: flex;
   }
@@ -93,38 +93,64 @@
 
 /* 375px and smaller */
 @media (max-width: 425px) {
-  :root {
+  /* :root {
     --fs-xxl:4rem;
     --fs-xl: 3rem;
     --fs-lg: 2.5rem;
     --fs-md: 2rem;
     --fs-sm: 1.7rem;
     --fs-xs: 1rem;
-  }
+  } */
   .buttons{
     width: 60%;
   }
+  button{
+    width: 60%;
+  }
+  input#colorPicker{
+    width: 40%;
+   }
+    .grid {
+        width: 90%;
+        height: 60vh;
+    }
 }
 
 /* 320px and smaller */
 @media (max-width: 375px) {
-  :root {
+  /* :root {
     --fs-xxl: 2rem;
     --fs-xl: 1.75rem;
     --fs-lg: 1.25rem;
     --fs-md: 0.875rem;
     --fs-sm: 0.65rem;
     --fs-xs: 0.3rem;
+  } */
+   input#colorPicker{
+    width: 50%;
+   }
+   button{
+    width: 70%;
+    width: 70%;
   }
+  .grid {
+      height: 55vh;
+    }
 }
 
 @media (max-width: 320px) {
-  :root {
-    --fs-xxl: 1.75rem;   /* ~28px */
-    --fs-xl: 1.5rem;     /* ~24px */
-    --fs-lg: 1.125rem;   /* ~18px */
-    --fs-md: 0.875rem;   /* ~14px */
-    --fs-sm: 0.65rem;    /* ~10px */
-    --fs-xs: 0.3rem;     /* ~5px */
+  /* :root {
+    --fs-xxl: 1.75rem;   
+    --fs-xl: 1.5rem;     
+    --fs-lg: 1.125rem;   
+    --fs-md: 0.875rem;   
+    --fs-sm: 0.65rem;    
+    --fs-xs: 0.3rem;  
+    */
+    button{
+    width: 80%;
   }
-}
+  .grid {
+      height: 50vh;
+    }
+  }
