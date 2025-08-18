@@ -211,3 +211,15 @@ button[data-active] {
   box-shadow: var(--glow-effect);
   transform: scale(1.02);
 }
+
+footer{
+  justify-content: center;
+  font-size: var(--fs-md);
+  gap: var(--fs-sm);
+}
+footer a{
+  width: 2%;
+}
+.github-logo{
+  width: 100%;
+}
