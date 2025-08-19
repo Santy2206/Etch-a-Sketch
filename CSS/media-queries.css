@@ -88,6 +88,9 @@
   .buttons{
     width:45%;
   }
+  footer a {
+    width: 3%;
+  }
   
 }
 
@@ -114,6 +117,9 @@
         width: 90%;
         height: 60vh;
     }
+    footer a {
+      width: 4%;
+    }
 }
 
 /* 320px and smaller */
@@ -136,6 +142,9 @@
   .grid {
       height: 55vh;
     }
+  footer a {
+    width: 5%;
+  }
 }
 
 @media (max-width: 320px) {
@@ -153,4 +162,7 @@
   .grid {
       height: 50vh;
     }
+  footer a {
+    width: 6%;
+  }
   }

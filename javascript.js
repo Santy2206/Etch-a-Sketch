@@ -19,4 +19,5 @@ letters.forEach(letter=>{
 
   })
 const grid=document.querySelector("[data-grid]")
+grid.innerHTML.d
   
