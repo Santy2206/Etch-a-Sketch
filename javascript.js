@@ -18,6 +18,14 @@ letters.forEach(letter=>{
   });
 
   })
+
+function addGrid(times){
+  for(let i=0;i<times;i++){
+    div=document.createElement('div')
+    grid.append(div)
+  }
+}
+
 const grid=document.querySelector("[data-grid]")
-grid.innerHTML.d
-  
+ 
+addGrid(3)
