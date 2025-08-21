@@ -51,7 +51,7 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   font-family: 'Minecrafteria', 'Press Start 2P', monospace;
 }
 .mobile{
@@ -146,11 +146,23 @@ main {
   width: 80%;
 }
 
-.grid {
+/* .grid {
   width: var(--grid-width);
   height: var(--grid-height);
   background-color: var(--color-grid-bg);
-}
+} */
+ .grid{
+  display: grid;
+  grid-template-columns: repeat(16,25px);
+  grid-template-rows: repeat(16,25px);
+ }
+ .grid div{
+  background-color: var(--color-grid-bg);
+ }
+ .grid div:hover{
+  opacity: 0.5;
+  transition: 1ms;
+ }
 
 input {
   background-color: var(--button-bg);

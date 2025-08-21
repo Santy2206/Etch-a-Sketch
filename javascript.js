@@ -19,13 +19,17 @@ letters.forEach(letter=>{
 
   })
 
-function addGrid(times){
+function addGrid(container,times){
+  times=times*times
   for(let i=0;i<times;i++){
     div=document.createElement('div')
-    grid.append(div)
+    container.append(div)
   }
+
 }
 
 const grid=document.querySelector("[data-grid]")
+const gridMobile=document.querySelector("[data-grid-mobile]")
  
-addGrid(3)
+addGrid(grid,16)
+addGrid(gridMobile,16)
