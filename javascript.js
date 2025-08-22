@@ -19,17 +19,30 @@ letters.forEach(letter=>{
 
   })
 
-function addGrid(container,times){
-  times=times*times
-  for(let i=0;i<times;i++){
-    div=document.createElement('div')
-    container.append(div)
+function addGrid(container, size) {
+  container.innerHTML = ""; // clear old grid
+  const total = size * size;
+  for (let i = 0; i < total; i++) {
+    const div = document.createElement("div");
+    container.append(div);
   }
 
+  // make sure CSS knows how many columns
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
 
-const grid=document.querySelector("[data-grid]")
-const gridMobile=document.querySelector("[data-grid-mobile]")
- 
-addGrid(grid,16)
-addGrid(gridMobile,16)
+const grid = document.querySelector("[data-grid]");
+const gridMobile = document.querySelector("[data-grid-mobile]");
+
+// function to adjust grid size based on screen width
+function setupResponsiveGrid() {
+  if (window.innerWidth < 768) {
+    addGrid(gridMobile, 8); // smaller grid for mobile
+  } else {
+    addGrid(grid, 16); // larger grid for desktop
+  }
+}
+
+// run once and on resize
+setupResponsiveGrid();

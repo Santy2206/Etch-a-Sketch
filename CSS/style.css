@@ -151,14 +151,16 @@ main {
   height: var(--grid-height);
   background-color: var(--color-grid-bg);
 } */
- .grid{
+.grid {
   display: grid;
-  grid-template-columns: repeat(16,25px);
-  grid-template-rows: repeat(16,25px);
- }
- .grid div{
-  background-color: var(--color-grid-bg);
- }
+  width: 40%;
+  aspect-ratio: 1.2 / 1; 
+  border: 1px solid #ccc;
+}
+
+.grid div {
+  background: white
+}
  .grid div:hover{
   opacity: 0.5;
   transition: 1ms;
