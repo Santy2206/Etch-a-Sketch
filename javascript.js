@@ -39,8 +39,9 @@ const gridMobile = document.querySelector("[data-grid-mobile]");
 function setupResponsiveGrid() {
   if (window.innerWidth < 768) {
     addGrid(gridMobile, 8); // smaller grid for mobile
-  } else {
-    addGrid(grid, 16); // larger grid for desktop
+  } 
+  else {
+    addGrid(grid, 15); // larger grid for desktop
   }
 }
 
