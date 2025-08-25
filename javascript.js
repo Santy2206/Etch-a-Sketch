@@ -33,17 +33,11 @@ function addGrid(container, size) {
 }
 
 const grid = document.querySelector("[data-grid]");
-const gridMobile = document.querySelector("[data-grid-mobile]");
+const gridMobile = document.querySelector('[data-grid-mobile]');
 
-// function to adjust grid size based on screen width
-function setupResponsiveGrid() {
-  if (window.innerWidth < 768) {
-    addGrid(gridMobile, 8); // smaller grid for mobile
-  } 
-  else {
-    addGrid(grid, 15); // larger grid for desktop
-  }
+addGrid(grid,16)
+addGrid(gridMobile,16)
+
+function hoverEffect(container){
+  container.style.backgroundColor="blue"
 }
-
-// run once and on resize
-setupResponsiveGrid();
