@@ -24,9 +24,11 @@ function addGrid(container, size) {
   const total = size * size;
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
-    container.append(div);
+    div.addEventListener("click", (e) => {
+        e.dataset.gridContainer='true'
+      });
+    container.append(div)
   }
-
   // make sure CSS knows how many columns
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -39,5 +41,6 @@ addGrid(grid,16)
 addGrid(gridMobile,16)
 
 function hoverEffect(container){
-  container.style.backgroundColor="blue"
+  
 }
+
