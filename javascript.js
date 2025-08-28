@@ -25,7 +25,7 @@ function addGrid(container, size) {
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
     div.addEventListener("click", (e) => {
-        e.dataset.backgroudColor="black"
+        e.style.backgroundColor="black"
       });
     container.append(div)
   }
@@ -40,7 +40,5 @@ const gridMobile = document.querySelector('[data-grid-mobile]');
 addGrid(grid,16)
 addGrid(gridMobile,16)
 
-function hoverEffect(container){
-  
-}
+
 
