@@ -25,7 +25,7 @@ function addGrid(container, size) {
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
     div.addEventListener("click", (e) => {
-        e.style.backgroundColor="black"
+        e.style.backgroundColor="gray"
       });
     container.append(div)
   }
