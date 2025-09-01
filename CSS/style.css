@@ -151,6 +151,9 @@ main {
   height: var(--grid-height);
   background-color: var(--color-grid-bg);
 } */
+ .grid[active]{
+  background: blue;
+ }
 .grid {
   display: grid;
   width: 32%;
