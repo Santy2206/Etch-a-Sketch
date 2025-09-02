@@ -24,10 +24,10 @@ function addGrid(container, size) {
   const total = size * size;
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
-    div.addEventListener("click", (e) => {
-        e.dataset.active="True"
-      });
     container.append(div)
+    div.addEventListener("click", (e) => {
+        e.target.dataset.active="true"
+      });
   }
   // make sure CSS knows how many columns
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
