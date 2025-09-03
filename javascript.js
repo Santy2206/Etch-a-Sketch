@@ -25,7 +25,7 @@ function addGrid(container, size) {
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
     container.append(div)
-    div.addEventListener("click", (e) => {
+    div.addEventListener("mouseover", (e) => {
         e.target.dataset.active="true"
       });
   }
