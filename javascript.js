@@ -18,20 +18,22 @@ letters.forEach(letter=>{
   });
 
   })
-
+function changeColor(e){
+  if (e.type ==="mouseover"&& !mouseDown)return
+  e.target.style.backgroundColor="blue"
+}
 function addGrid(container, size) {
-  container.innerHTML = ""; // clear old grid
+  container.innerHTML = ""; 
   const total = size * size;
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
     container.append(div)
-    div.addEventListener("mouseover", (e) => {
-        e.target.dataset.active="true"
-      });
-  }
-  // make sure CSS knows how many columns
+    div.addEventListener("mouseover",changeColor)
+    div.addEventListener("mousedown",changeColor)
+
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+ }
 }
 
 const grid = document.querySelector("[data-grid]");
@@ -39,6 +41,3 @@ const gridMobile = document.querySelector('[data-grid-mobile]');
 
 addGrid(grid,16)
 addGrid(gridMobile,16)
-
-
-
