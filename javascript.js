@@ -18,23 +18,36 @@ letters.forEach(letter=>{
   });
 
   })
-function changeColor(e){
-  if (e.type ==="mouseover"&& !mouseDown)return
-  e.target.style.backgroundColor="blue"
+
+let mouseDown = false;
+
+function changeColor(e) {
+  if (e.type === "mousedown") {
+    mouseDown = true;
+    e.target.style.backgroundColor = "blue";
+  } else if (e.type === "mouseover" && mouseDown) {
+    e.target.style.backgroundColor = "blue";
+  }
 }
+
+document.addEventListener("mouseup", () => {
+  mouseDown = false;
+});
 function addGrid(container, size) {
   container.innerHTML = ""; 
   const total = size * size;
   for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
     container.append(div)
-    div.addEventListener("mouseover",changeColor)
     div.addEventListener("mousedown",changeColor)
+    div.addEventListener("mouseover",changeColor)
+  
+  }
 
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
  }
-}
+
 
 const grid = document.querySelector("[data-grid]");
 const gridMobile = document.querySelector('[data-grid-mobile]');
