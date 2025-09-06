@@ -163,7 +163,7 @@ main {
   background: white
 }
 .grid div[data-active]{
-  background: blue;
+  background: gray;
  }
 
 input {
