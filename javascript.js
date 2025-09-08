@@ -18,20 +18,15 @@ letters.forEach(letter=>{
   });
 
   })
-
-let mouseOver=false;
-function changeColor(e){
-  if(e.type==="mouseDown"){
-    e.style.backgroundColor="blue"
-    mouseOver=true
-    
-  }
-  else if(e.type==="mouseOver"){
-    e.style.backgroundColor="blue"
-  }
-  else if (e.type==="mouserUp"){
-    mouseOver=false
+let desktopGrid=document.querySelector("[data-grid]")
+let mobileGrid=document.querySelector("[data-grid-mobile]")
+function addGrid(container,size){
+  size=size*size
+  for(size;size<=0;size--){
+    let div=document.createElement="div"
+    container.append(div)
   }
 }
-
+addGrid(desktopGrid,16)
+addGrid(mobileGrid,16)
 
