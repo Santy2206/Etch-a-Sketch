@@ -21,11 +21,15 @@ letters.forEach(letter=>{
 let desktopGrid=document.querySelector("[data-grid]")
 let mobileGrid=document.querySelector("[data-grid-mobile]")
 function addGrid(container,size){
-  size=size*size
-  for(size;size<=0;size--){
-    let div=document.createElement="div"
+  let total=size*size
+  for(let i=0;i<total;i++){
+    let div=document.createElement("div")
+    div.addEventListener("mousedown",changeColor)
+    div.addEventListener("mouseup",changeColor)
     container.append(div)
   }
+  container.style.gridTemplateColumns=`repeat(${size},1fr)`
+  container.style.gridTemplateRows=`repeat(${size},1fr)`
 }
 addGrid(desktopGrid,16)
 addGrid(mobileGrid,16)
