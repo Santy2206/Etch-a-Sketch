@@ -18,19 +18,32 @@ letters.forEach(letter=>{
   });
 
   })
+let isMouseDown=false
+function changeColor(e) {
+  if(isMouseDown){
+    e.target.style.background="black"
+  }
+}
 let desktopGrid=document.querySelector("[data-grid]")
 let mobileGrid=document.querySelector("[data-grid-mobile]")
 function addGrid(container,size){
   let total=size*size
   for(let i=0;i<total;i++){
     let div=document.createElement("div")
-    div.addEventListener("mousedown",changeColor)
-    div.addEventListener("mouseup",changeColor)
+    
+    div.addEventListener("mouseover", changeColor);
+
+    div.addEventListener("mousedown", (e) => {
+      e.target.style.background = "black";
+    });
     container.append(div)
   }
+
   container.style.gridTemplateColumns=`repeat(${size},1fr)`
   container.style.gridTemplateRows=`repeat(${size},1fr)`
 }
+document.body.addEventListener("mousedown",()=>{isMouseDown=true})
+document.body.addEventListener("mouseup",()=>{isMouseDown=false})
 addGrid(desktopGrid,16)
 addGrid(mobileGrid,16)
 
