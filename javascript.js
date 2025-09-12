@@ -1,5 +1,6 @@
 const letters=['a','e','t','c','h','middlebar','s','k',]
-letters.forEach(letter=>{
+function titleEffect(){
+  letters.forEach(letter=>{
   let selector=`[data-${letter}]`
   let elements=document.querySelectorAll(selector)
     elements.forEach(el => {
@@ -18,10 +19,18 @@ letters.forEach(letter=>{
   });
 
   })
-let isMouseDown=false
-function changeColor(e) {
-  if(isMouseDown){
-    e.target.style.background="black"
+}
+
+let defaultColor="#333333"
+function getNewColor(){
+  let input=document.querySelector("[data-color]")
+  return input.getAttribute('value')
+}
+let mousedown=false;
+function changeColor(e){
+  if(mousedown){
+    newColor=getNewColor()
+    e.target.style.background=newColor
   }
 }
 let desktopGrid=document.querySelector("[data-grid]")
@@ -30,6 +39,7 @@ function addGrid(container,size){
   let total=size*size
   for(let i=0;i<total;i++){
     let div=document.createElement("div")
+    div.dataset.gridElement='off'
     
     div.addEventListener("mouseover", changeColor);
 
@@ -42,8 +52,20 @@ function addGrid(container,size){
   container.style.gridTemplateColumns=`repeat(${size},1fr)`
   container.style.gridTemplateRows=`repeat(${size},1fr)`
 }
-document.body.addEventListener("mousedown",()=>{isMouseDown=true})
-document.body.addEventListener("mouseup",()=>{isMouseDown=false})
+document.addEventListener("mousedown",()=>{mousedown=true})
+document.addEventListener("mouseup",()=>{mousedown=false})
 addGrid(desktopGrid,16)
 addGrid(mobileGrid,16)
+
+
+gridElement=document.querySelectorAll('[data-grid-element]')
+function resetGrid(){
+  gridElement.forEach(element=>{
+    element.style.background='white'  
+  })
+}
+let clearButton=document.querySelector('[data-clear]')
+clearButton.addEventListener("click",resetGrid)
+
+
 
