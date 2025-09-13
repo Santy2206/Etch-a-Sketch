@@ -22,9 +22,17 @@ function titleEffect(){
 }
 
 let defaultColor="#333333"
+let input=document.querySelector("[data-color]")
 function getNewColor(){
-  let input=document.querySelector("[data-color]")
   return input.getAttribute('value')
+}
+colorPicker.addEventListener("input", updateFirst, false);
+colorPicker.addEventListener("change", watchColorPicker, false);
+
+function watchColorPicker(event) {
+  input.forEach((p) => {
+    p.style.color = event.target.value;
+  });
 }
 let mousedown=false;
 function changeColor(e){
@@ -66,6 +74,7 @@ function resetGrid(){
 }
 let clearButton=document.querySelector('[data-clear]')
 clearButton.addEventListener("click",resetGrid)
+
 
 
 
