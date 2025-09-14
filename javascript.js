@@ -26,14 +26,6 @@ let input=document.querySelector("[data-color]")
 function getNewColor(){
   return input.getAttribute('value')
 }
-colorPicker.addEventListener("input", updateFirst, false);
-colorPicker.addEventListener("change", watchColorPicker, false);
-
-function watchColorPicker(event) {
-  input.forEach((p) => {
-    p.style.color = event.target.value;
-  });
-}
 let mousedown=false;
 function changeColor(e){
   if(mousedown){
