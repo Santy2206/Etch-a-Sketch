@@ -6,7 +6,7 @@
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/media-queries.css">
-    <script src="javascript.js" defer></script>
+    <script type="module" src="src/main.js"></script>
   </head>
   <body>
     <header data-header>
@@ -43,7 +43,7 @@
       <section class="buttons">
         <h2>Pincel</h2>
         <article>
-          <input id="colorPicker" type="color" value="#333333">
+          <input id="colorPicker" id="colors" type="color" value="#333333">
           <button data-active>
             Color Mode
           </button>
