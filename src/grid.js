@@ -21,7 +21,8 @@ export function resetGrid() {
   const gridElements = document.querySelectorAll("[data-grid-element]");
   gridElements.forEach(element => element.style.background = "white");
 }
-
+import { setupColorPicker } from './colorPicker.js';
+setupColorPicker
 export function setupGridEvents() {
   document.addEventListener("mousedown", () => { isMouseDown = true; });
   document.addEventListener("mouseup", () => { isMouseDown = false; });
@@ -30,6 +31,6 @@ export function setupGridEvents() {
 // Example color-change handler
 function changeColor(e) {
   if (isMouseDown) {
-    e.target.style.background = "Blue";
+    e.target.style.background ="GRAY" ;
   }
 }
