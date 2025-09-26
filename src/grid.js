@@ -29,6 +29,6 @@ export function setupGridEvents() {
 // Example color-change handler
 function changeColor(e) {
   if (isMouseDown) {
-    e.target.style.background ="BLACK" ;
+    e.target.style.background ="gray" ;
   }
 }
