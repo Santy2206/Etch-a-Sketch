@@ -1,5 +1,6 @@
 let isMouseDown = false;
-
+const backgroundColor = document.querySelector("[data-backgroundColor]");
+const pencelColor = document.querySelector("[data-pencelColor]");
 export function addGrid(container, size) {
   const total = size * size;
   for (let i = 0; i < total; i++) {
@@ -8,7 +9,7 @@ export function addGrid(container, size) {
 
     div.addEventListener("mouseover", changeColor);
     div.addEventListener("mousedown", (e) => {
-      e.target.style.background = "black";
+      e.target.style.background = pencelColor.value;
     });
     container.append(div);
   }
@@ -26,9 +27,8 @@ export function setupGridEvents() {
   document.addEventListener("mouseup", () => { isMouseDown = false; });
 }
 
-// Example color-change handler
 function changeColor(e) {
   if (isMouseDown) {
-    e.target.style.background ="gray" ;
+    e.target.style.background =pencelColor.value ;
   }
 }
