@@ -1,4 +1,3 @@
-let isMouseDown = false;
 
 export function setupColorPicker(defaultColor) {
  
