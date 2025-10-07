@@ -20,7 +20,7 @@ export function addGrid(container, size) {
 
 export function resetGrid() {
   const gridElements = document.querySelectorAll("[data-grid-element]");
-  gridElements.forEach(element => element.style.background = "white");
+  gridElements.forEach(element => element.style.background = backgroundColor.value);
 }
 export function setupGridEvents() {
   document.addEventListener("mousedown", () => { isMouseDown = true; });
