@@ -67,9 +67,10 @@ addGrid(mobileGrid,16)
 
 
 gridElement=document.querySelectorAll('[data-grid-element]')
+gridColorChanger=document.querySelector('data-color')
 function resetGrid(){
   gridElement.forEach(element=>{
-    element.style.background='white'  
+    element.style.background=gridColorChanger.value
   })
 }
 let clearButton=document.querySelector('[data-clear]')
