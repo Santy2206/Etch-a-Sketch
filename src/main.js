@@ -1,5 +1,5 @@
 import { titleEffect } from './titleEffect.js';
-import { addGrid, resetGrid, setupGridEvents } from './grid.js';
+import { addGrid} from './grid.js';
 import { setupColorPicker } from './colorPicker.js';
 
 function main() {
@@ -9,7 +9,6 @@ function main() {
   // Setup grid
   const desktopGrid = document.querySelector("[data-grid]");
   const mobileGrid  = document.querySelector("[data-grid-mobile]");
-  setupGridEvents();
   addGrid(desktopGrid, 16);
   addGrid(mobileGrid, 16);
 
@@ -17,8 +16,8 @@ function main() {
   setupColorPicker("#000000"); // pass your default color here
 
   // Clear button
-  const clearButton = document.querySelector("[data-clear]");
-  clearButton.addEventListener("click", resetGrid);
+  // const clearButton = document.querySelector("[data-clear]");
+  // clearButton.addEventListener("click", resetGrid);
 }
 
 document.addEventListener("DOMContentLoaded", main);
