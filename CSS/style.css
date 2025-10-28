@@ -157,7 +157,6 @@ main {
   width: 32%;
   aspect-ratio: 1 / 1; 
   border: 1px solid #ccc;
-  cursor:pointer;
 }
 
 .grid div {

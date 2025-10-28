@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- essential for responsive breakpoints -->
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/media-queries.css">
-    <script type="module" src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
   </head>
   <body>
     <header data-header>
@@ -43,7 +43,7 @@
       <section class="buttons">
         <h2>Pincel</h2>
         <article>
-          <input id="colorPicker" data-pencelColor type="color" value="#333333">
+          <input id="colorPicker" type="color" value="#333333">
           <button data-active>
             Color Mode
           </button>
@@ -61,7 +61,7 @@
       <section class="buttons">
         <h2>grid</h2>
         <article>
-          <input data-backgroundColor type="color" value="#333333">
+          <input data-color id="colorPicker" type="color" value="#333333">
           <div class="size-value">
             <p>
               <span>30</span>
