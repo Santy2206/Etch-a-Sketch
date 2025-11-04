@@ -21,26 +21,7 @@ function titleEffect(){
   })
 }
 
-let defaultColor="#333333"
-let input=document.querySelector("[data-color]")
-function getNewColor(){
-  return input.getAttribute('value')
-}
-colorPicker.addEventListener("input", updateFirst, false);
-colorPicker.addEventListener("change", watchColorPicker, false);
-
-function watchColorPicker(event) {
-  input.forEach((p) => {
-    p.style.color = event.target.value;
-  });
-}
-let mousedown=false;
-function changeColor(e){
-  if(mousedown){
-    newColor=getNewColor()
-    e.target.style.background=newColor
-  }
-}
+let input=document.querySelector("[data-picker")
 let desktopGrid=document.querySelector("[data-grid]")
 let mobileGrid=document.querySelector("[data-grid-mobile]")
 function addGrid(container,size){
@@ -48,11 +29,9 @@ function addGrid(container,size){
   for(let i=0;i<total;i++){
     let div=document.createElement("div")
     div.dataset.gridElement='off'
-    
-    div.addEventListener("mouseover", changeColor);
 
     div.addEventListener("mousedown", (e) => {
-      e.target.style.background = "black";
+      e.target.style.background = input.value;
     });
     container.append(div)
   }
