@@ -168,9 +168,6 @@ main {
 
 input {
   background-color: var(--button-bg);
-}
-
-input#colorPicker {
   width: 30%;
   height: 15vh;
   padding: 0rem;
