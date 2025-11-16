@@ -27,6 +27,7 @@ titleEffect()
 let input=document.querySelector("[data-picker")
 let desktopGrid=document.querySelector("[data-grid]")
 let mobileGrid=document.querySelector("[data-grid-mobile]")
+let gridColorChanger=document.querySelector('[data-color]')
 
 let mousedown=false
 document.addEventListener("mousedown",()=>{mousedown=true})
@@ -36,6 +37,7 @@ function addGrid(container,size){
   for(let i=0;i<total;i++){
     let div=document.createElement("div")
     div.dataset.gridElement='off'
+    div.style.backgroundColor=gridColorChanger.value 
     div.addEventListener("mouseover",e=>{
       if(mousedown) e.target.style.background = input.value;
     }),
@@ -52,9 +54,9 @@ addGrid(desktopGrid,16)
 addGrid(mobileGrid,16)
 
 // buttons
-gridElement=document.querySelectorAll('[data-grid-element]')
-gridColorChanger=document.querySelector('[data-color]')
+
 function resetGrid(){
+  gridElement=document.querySelectorAll('[data-grid-element]')
   gridElement.forEach(element=>{
     element.style.background=gridColorChanger.value
   })
