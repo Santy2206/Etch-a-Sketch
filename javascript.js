@@ -54,6 +54,21 @@ addGrid(desktopGrid,16)
 addGrid(mobileGrid,16)
 
 // buttons
+let activeMode=document.querySelector('[data-active]')
+let colorModes=document.querySelector('[data-colors]')
+let colorModesButtons=colorModes.querySelectorAll("button")
+
+colorModesButtons.forEach((b)=>{
+  b.addEventListener("click",()=>{
+    b.dataset.active=''
+    if('active'in b.dataset){
+      b.style.boxShadow = 'var(--glow-effect)';
+      b.style.transform = 'scale(1.02)';
+
+    }
+  })
+})
+
 
 function resetGrid(){
   gridElement=document.querySelectorAll('[data-grid-element]')
@@ -65,8 +80,8 @@ let clearButton=document.querySelector('[data-clear]')
 clearButton.addEventListener("click",resetGrid)
 
 
-numberSize=document.querySelectorAll('[data-number]')
-sizeSlider=document.querySelector('[data-size]')
+let numberSize=document.querySelectorAll('[data-number]')
+let sizeSlider=document.querySelector('[data-size]')
 
 function resetSize(){
   numberSize.forEach(num=>{
@@ -76,5 +91,6 @@ function resetSize(){
   addGrid(mobileGrid,sizeSlider.value)
 }
 sizeSlider.addEventListener('input',resetSize)
+sizeSlider.addEventListener('mousedown',resetGrid)
 
 
