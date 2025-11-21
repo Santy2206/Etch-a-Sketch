@@ -91,10 +91,6 @@ function resetSize(){
   addGrid(mobileGrid,sizeSlider.value)
 }
 sizeSlider.addEventListener('input',resetSize)
-<<<<<<< HEAD
 sizeSlider.addEventListener('mousedown',resetGrid)
 
-=======
-sizeSlider.addEventListener("mouseup",resetGrid)
->>>>>>> ef0d80e82cec0b0b01c4e2b04d43d20dbae54729
 
