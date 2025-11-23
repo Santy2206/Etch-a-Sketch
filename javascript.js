@@ -60,6 +60,7 @@ let colorModesButtons=colorModes.querySelectorAll("button")
 
 colorModesButtons.forEach((b)=>{
   b.addEventListener("click",()=>{
+    b.closest()
     b.dataset.active=''
     if('active'in b.dataset){
       b.style.boxShadow = 'var(--glow-effect)';
