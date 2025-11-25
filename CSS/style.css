@@ -211,11 +211,11 @@ button {
   display: flex;
   font-size: var(--fs-md);
   border-radius: var(--button-border-radius);
-  width: 50%;
   background-color: var(--button-bg);
   justify-content: center;
   color: var(--button-color);
   transition: transform var(--transition-fast);
+  
 }
 
 button[data-active] {
