@@ -217,6 +217,14 @@ button {
   transition: transform var(--transition-fast);
   
 }
+.pencil{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+.pencil button{
+  width:100%;
+}
 
 button[data-active] {
   box-shadow: var(--glow-effect);
