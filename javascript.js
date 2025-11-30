@@ -57,6 +57,7 @@ addGrid(mobileGrid,16)
 let activeMode=document.querySelector('[data-active]')
 let colorModes=document.querySelector('[data-colors]')
 let colorModesButtons=colorModes.querySelectorAll("button")
+function tunOff(){}
 
 colorModesButtons.forEach((b)=>{
   b.addEventListener("click",()=>{
