@@ -1,4 +1,4 @@
-// Header 
+hi// Header 
 const letters=['a','e','t','c','h','middlebar','s','k',]
 function titleEffect(){
   letters.forEach(letter=>{
