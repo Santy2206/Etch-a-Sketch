@@ -1,4 +1,4 @@
-hi// Header 
+// Header 
 const letters=['a','e','t','c','h','middlebar','s','k',]
 function titleEffect(){
   letters.forEach(letter=>{
@@ -28,45 +28,53 @@ let input=document.querySelector("[data-picker")
 let desktopGrid=document.querySelector("[data-grid]")
 let mobileGrid=document.querySelector("[data-grid-mobile]")
 let gridColorChanger=document.querySelector('[data-color]')
+let normalModeButton=document.querySelector('[data-normal]')
+let rainbowModeButton=document.querySelector('[data-rainbow]')
+let eraserModeButton=document.querySelector('[data-eraser]')
 
 let mousedown=false
 document.addEventListener("mousedown",()=>{mousedown=true})
 document.addEventListener("mouseup",()=>{mousedown=false})
-function addGrid(container,size){
-  let total=size*size
-  for(let i=0;i<total;i++){
-    let div=document.createElement("div")
-    div.dataset.gridElement='off'
-    div.style.backgroundColor=gridColorChanger.value 
-    div.addEventListener("mouseover",e=>{
-      if(mousedown) e.target.style.background = input.value;
-    }),
-    div.addEventListener("mousedown", (e) => {
-      e.target.style.background = input.value;
-    });
-    container.append(div)
-  }
 
-  container.style.gridTemplateColumns=`repeat(${size},1fr)`
-  container.style.gridTemplateRows=`repeat(${size},1fr)`
+if('active'in normalModeButton.dataset){
+  function addGrid(container,size){
+    let total=size*size
+    for(let i=0;i<total;i++){
+      let div=document.createElement("div")
+      div.dataset.gridElement='off'
+      div.style.backgroundColor=gridColorChanger.value 
+      div.addEventListener("mouseover",e=>{
+        if(mousedown) e.target.style.background = input.value;
+      }),
+      div.addEventListener("mousedown", (e) => {
+        e.target.style.background = input.value;
+      });
+      container.append(div)
+    }
+
+    container.style.gridTemplateColumns=`repeat(${size},1fr)`
+    container.style.gridTemplateRows=`repeat(${size},1fr)`
+  }
+  addGrid(desktopGrid,16)
+  addGrid(mobileGrid,16)
 }
-addGrid(desktopGrid,16)
-addGrid(mobileGrid,16)
 
 // buttons
 let activeMode=document.querySelector('[data-active]')
 let colorModes=document.querySelector('[data-colors]')
-let colorModesButtons=colorModes.querySelectorAll("button")
-function tunOff(){}
+let colorModesButtons=colorModes.querySelectorAll('[data-carousel-button]')
 
 colorModesButtons.forEach((b)=>{
   b.addEventListener("click",()=>{
-    b.closest()
+    colorModesButtons.forEach(b=>{
+      delete b.dataset.active
+      b.style.boxShadow = '';
+      b.style.transform = '';
+    })
     b.dataset.active=''
     if('active'in b.dataset){
       b.style.boxShadow = 'var(--glow-effect)';
       b.style.transform = 'scale(1.02)';
-
     }
   })
 })
@@ -94,5 +102,4 @@ function resetSize(){
 }
 sizeSlider.addEventListener('input',resetSize)
 sizeSlider.addEventListener('mousedown',resetGrid)
-
 

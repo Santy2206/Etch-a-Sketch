@@ -38,19 +38,20 @@
         
       </div>
     </header>
+
     <main class="desktop"data-main>
       <section class="buttons">
         <h2>Pencil</h2>
         <article data-colors>
           <input data-picker="" type="color" value="#333333">
           <li class="pencil">
-            <button data-active>
+            <button data-normal data-carousel-button data-active>
             Color Mode
             </button>
-            <button>
+            <button data-rainbow data-carousel-button>
               Rainbow Mode 
             </button>
-            <button>
+            <button data-eraser data-carousel-button>
               Eraser
             </button>
           </li>
@@ -72,7 +73,7 @@
             </p>
           </div>
           <input data-size id="sizeSlider" type="range" value="16" min="1" max="64">
-          <button data-clear>
+          <button class="clear" data-clear>
             Clear
           </button>
         </article>
@@ -114,7 +115,7 @@
         </article>
       </section>
     </main>
-   
+
     <footer data-footer>
       <p>
         Copyright ©
