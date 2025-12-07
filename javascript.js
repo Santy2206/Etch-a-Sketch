@@ -36,7 +36,6 @@ let mousedown=false
 document.addEventListener("mousedown",()=>{mousedown=true})
 document.addEventListener("mouseup",()=>{mousedown=false})
 
-if('active'in normalModeButton.dataset){
   function addGrid(container,size){
     let total=size*size
     for(let i=0;i<total;i++){
@@ -55,9 +54,6 @@ if('active'in normalModeButton.dataset){
     container.style.gridTemplateColumns=`repeat(${size},1fr)`
     container.style.gridTemplateRows=`repeat(${size},1fr)`
   }
-  addGrid(desktopGrid,16)
-  addGrid(mobileGrid,16)
-}
 
 // buttons
 let activeMode=document.querySelector('[data-active]')
@@ -75,6 +71,8 @@ colorModesButtons.forEach((b)=>{
     if('active'in b.dataset){
       b.style.boxShadow = 'var(--glow-effect)';
       b.style.transform = 'scale(1.02)';
+      addGrid(desktopGrid,16)
+      addGrid(mobileGrid,16)
     }
   })
 })
