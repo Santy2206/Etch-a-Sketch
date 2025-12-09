@@ -36,24 +36,46 @@ let mousedown=false
 document.addEventListener("mousedown",()=>{mousedown=true})
 document.addEventListener("mouseup",()=>{mousedown=false})
 
-  function addGrid(container,size){
+function addGrid(container,size){
     let total=size*size
-    for(let i=0;i<total;i++){
-      let div=document.createElement("div")
-      div.dataset.gridElement='off'
-      div.style.backgroundColor=gridColorChanger.value 
-      div.addEventListener("mouseover",e=>{
-        if(mousedown) e.target.style.background = input.value;
-      }),
-      div.addEventListener("mousedown", (e) => {
-        e.target.style.background = input.value;
-      });
-      container.append(div)
+    if("active" in normalModeButton.dataset){
+      for(let i=0;i<total;i++){
+        let div=document.createElement("div")
+        div.dataset.gridElement='off'
+        div.style.backgroundColor=gridColorChanger.value 
+        div.addEventListener("mouseover",e=>{
+          if(mousedown) e.target.style.background = input.value;
+        }),
+        div.addEventListener("mousedown", (e) => {
+          e.target.style.background = input.value;
+        });
+        container.append(div)
+      }
     }
+    else if("active" in rainbowModeButton.dataset){
+      for(let i=0;i<total;i++){
+        let div=document.createElement("div")
+        div.dataset.gridElement='off'
+        const r = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Red
+        const g = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Green
+        const b = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Blue
+        div.style.backgroundColor=`rgb(${r}, ${g}, ${b});`
+        div.addEventListener("mouseover",e=>{
+          if(mousedown) e.target.style.background = input.value;
+        }),
+        div.addEventListener("mousedown", (e) => {
+          e.target.style.background = input.value;
+        });
+        container.append(div)
+      }
 
+    }
     container.style.gridTemplateColumns=`repeat(${size},1fr)`
     container.style.gridTemplateRows=`repeat(${size},1fr)`
   }
+addGrid(desktopGrid,30)
+addGrid(mobileGrid,30)
+
 
 // buttons
 let activeMode=document.querySelector('[data-active]')
@@ -71,8 +93,8 @@ colorModesButtons.forEach((b)=>{
     if('active'in b.dataset){
       b.style.boxShadow = 'var(--glow-effect)';
       b.style.transform = 'scale(1.02)';
-      addGrid(desktopGrid,16)
-      addGrid(mobileGrid,16)
+      addGrid(desktopGrid,sizeSlider.value)
+      addGrid(mobileGrid,sizeSlider.value)
     }
   })
 })
