@@ -38,43 +38,16 @@ document.addEventListener("mouseup",()=>{mousedown=false})
 
 function addGrid(container,size){
     let total=size*size
-    if("active" in normalModeButton.dataset){
-      for(let i=0;i<total;i++){
-        let div=document.createElement("div")
-        div.dataset.gridElement='off'
-        div.style.backgroundColor=gridColorChanger.value 
-        div.addEventListener("mouseover",e=>{
-          if(mousedown) e.target.style.background = input.value;
-        }),
-        div.addEventListener("mousedown", (e) => {
-          e.target.style.background = input.value;
-        });
-        container.append(div)
-      }
-    }
-    else if("active" in rainbowModeButton.dataset){
-      for(let i=0;i<total;i++){
-        let div=document.createElement("div")
-        div.dataset.gridElement='off'
-        const r = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Red
-        const g = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Green
-        const b = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Blue
-        div.style.backgroundColor=`rgb(${r}, ${g}, ${b});`
-        div.addEventListener("mouseover",e=>{
-          if(mousedown) e.target.style.background = input.value;
-        }),
-        div.addEventListener("mousedown", (e) => {
-          e.target.style.background = input.value;
-        });
-        container.append(div)
-      }
-
+    for(let i=0;i<total;i++){
+      let div=document.createElement("div")
+      div.dataset.gridElement='off'
+      container.append(div)
     }
     container.style.gridTemplateColumns=`repeat(${size},1fr)`
     container.style.gridTemplateRows=`repeat(${size},1fr)`
   }
-addGrid(desktopGrid,30)
-addGrid(mobileGrid,30)
+addGrid(desktopGrid,16)
+addGrid(mobileGrid,16)
 
 
 // buttons
@@ -82,6 +55,8 @@ let activeMode=document.querySelector('[data-active]')
 let colorModes=document.querySelector('[data-colors]')
 let colorModesButtons=colorModes.querySelectorAll('[data-carousel-button]')
 
+
+gridElement=document.querySelectorAll('[data-grid-element]')
 colorModesButtons.forEach((b)=>{
   b.addEventListener("click",()=>{
     colorModesButtons.forEach(b=>{
@@ -93,15 +68,41 @@ colorModesButtons.forEach((b)=>{
     if('active'in b.dataset){
       b.style.boxShadow = 'var(--glow-effect)';
       b.style.transform = 'scale(1.02)';
-      addGrid(desktopGrid,sizeSlider.value)
-      addGrid(mobileGrid,sizeSlider.value)
+    }
+    if('normal' in b.dataset){
+      gridElement.forEach(div=>{
+        div.style.backgroundColor=gridColorChanger.value 
+      div.addEventListener("mouseover",e=>{
+        if(mousedown) e.target.style.background = input.value;
+      }),
+      div.addEventListener("mousedown", (e) => {
+        e.target.style.background = input.value;
+      });
+
+      })
+    }
+    if('rainbow' in b.dataset){
+        const r = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Red
+        const g = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Green
+        const b = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Blue
+        newBackground=`rgb(${r}, ${g}, ${b});`
+        gridElement.forEach(element=>{
+          element.addEventListener("mouseover",e=>{
+          if(mousedown) e.target.style.background =newBackground;
+        }),
+        element.addEventListener("mousedown", (e) => {
+          e.target.style.background = newBackground;
+        });
+
+        })
+        
+
     }
   })
 })
 
 
 function resetGrid(){
-  gridElement=document.querySelectorAll('[data-grid-element]')
   gridElement.forEach(element=>{
     element.style.background=gridColorChanger.value
   })
