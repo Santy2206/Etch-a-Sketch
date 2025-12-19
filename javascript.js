@@ -41,31 +41,7 @@ function addGrid(container,size){
     for(let i=0;i<total;i++){
       let div=document.createElement("div")
       div.dataset.gridElement='off'
-      container.append(div)
-    }
-    container.style.gridTemplateColumns=`repeat(${size},1fr)`
-    container.style.gridTemplateRows=`repeat(${size},1fr)`
-  }
-addGrid(desktopGrid,16)
-addGrid(mobileGrid,16)
-
-
-// buttons
-let activeMode=document.querySelector('[data-active]')
-let colorModes=document.querySelector('[data-colors]')
-let colorModesButtons=colorModes.querySelectorAll('[data-carousel-button]')
-
-
-gridElement=document.querySelectorAll('[data-grid-element]')
-colorModesButtons.forEach((b)=>{
-  b.addEventListener("click",()=>{
-    colorModesButtons.forEach(b=>{
-      delete b.dataset.active
-      b.style.boxShadow = '';
-      b.style.transform = '';
-    })
-    b.dataset.active=''
-    if('active'in b.dataset){
+      if('active'in b.dataset){
       b.style.boxShadow = 'var(--glow-effect)';
       b.style.transform = 'scale(1.02)';
     }
@@ -98,6 +74,30 @@ colorModesButtons.forEach((b)=>{
         
 
     }
+      container.append(div)
+    }
+    container.style.gridTemplateColumns=`repeat(${size},1fr)`
+    container.style.gridTemplateRows=`repeat(${size},1fr)`
+  }
+addGrid(desktopGrid,16)
+addGrid(mobileGrid,16)
+
+
+// buttons
+let activeMode=document.querySelector('[data-active]')
+let colorModes=document.querySelector('[data-colors]')
+let colorModesButtons=colorModes.querySelectorAll('[data-carousel-button]')
+
+
+gridElement=document.querySelectorAll('[data-grid-element]')
+colorModesButtons.forEach((b)=>{
+  b.addEventListener("click",()=>{
+    colorModesButtons.forEach(b=>{
+      delete b.dataset.active
+      b.style.boxShadow = '';
+      b.style.transform = '';
+    })
+    b.dataset.active=''
   })
 })
 
