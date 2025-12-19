@@ -60,7 +60,7 @@ function addGrid(container,size){
     if('rainbow' in b.dataset){
         const r = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Red
         const g = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Green
-        const b = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Blue
+        const b = Math.floor(Math.random() * 256);
         newBackground=`rgb(${r}, ${g}, ${b});`
         gridElement.forEach(element=>{
           element.addEventListener("mouseover",e=>{
