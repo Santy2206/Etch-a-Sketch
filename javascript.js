@@ -1,126 +1,124 @@
-// Header 
-const letters=['a','e','t','c','h','middlebar','s','k',]
-function titleEffect(){
-  letters.forEach(letter=>{
-  let selector=`[data-${letter}]`
-  let elements=document.querySelectorAll(selector)
-    elements.forEach(el => {
-    el.addEventListener("mouseenter", () => {
-  
-      const capitalized = letter.toUpperCase();
-      el.src = `Images/Transformed-Title/${capitalized}.png`;
-    });
+// --- CONFIGURATION & GLOBALS ---
+const LETTERS = ['a', 'e', 't', 'c', 'h', 'middlebar', 's', 'k'];
+let isMouseDown = false;
+let currentState="normal";
+// --- SELECTORS ---
+const desktopGrid = document.querySelector("[data-grid]");
+const mobileGrid = document.querySelector("[data-grid-mobile]");
+const sizeSlider = document.querySelector('[data-size]');
+const colorPicker = document.querySelector('[data-color]');
+const numberSizeLabels = document.querySelectorAll('[data-number]');
+let colorsList=document.querySelector('[data-pencil]')
+let colorMode=colorsList.closest('[data-active]')
 
-    el.addEventListener("mouseleave", () => {
-  
-      const lowercased = letter.toLowerCase();
-      el.src = `Images/Title/${lowercased}.png`;
-      el.style.transform = "translateX(3px)";
+// --- FEATURE: TITLE EFFECTS ---
+function initTitleEffects() {
+  LETTERS.forEach(letter => {
+    const elements = document.querySelectorAll(`[data-${letter}]`);
+    elements.forEach(el => {
+      el.addEventListener("mouseenter", () => {
+        el.src = `Images/Transformed-Title/${letter.toUpperCase()}.png`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.src = `Images/Title/${letter.toLowerCase()}.png`;
+        el.style.transform = "translateX(3px)";
+      });
     });
   });
-
-  })
 }
-titleEffect()
 
-// Grid
-let input=document.querySelector("[data-picker")
-let desktopGrid=document.querySelector("[data-grid]")
-let mobileGrid=document.querySelector("[data-grid-mobile]")
-let gridColorChanger=document.querySelector('[data-color]')
-let normalModeButton=document.querySelector('[data-normal]')
-let rainbowModeButton=document.querySelector('[data-rainbow]')
-let eraserModeButton=document.querySelector('[data-eraser]')
+// --- FEATURE: GRID LOGIC ---
+function createGrid(container, size) {
+  container.innerHTML = ''; // Clear existing grid before adding new one
+  const total = size * size;
+  
+  for (let i = 0; i < total; i++) {
+    const div = document.createElement("div");
+    div.dataset.gridElement = 'off';
+    container.append(div);
+  }
+  
+  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+}
 
-let mousedown=false
-document.addEventListener("mousedown",()=>{mousedown=true})
-document.addEventListener("mouseup",()=>{mousedown=false})
+function updateGridSize() {
+  const size = sizeSlider.value;
+  numberSizeLabels.forEach(num => num.textContent = size);
+  createGrid(desktopGrid, size);
+  createGrid(mobileGrid, size);
+}
+function changeColor(){
 
-function addGrid(container,size){
-    let total=size*size
-    for(let i=0;i<total;i++){
-      let div=document.createElement("div")
-      div.dataset.gridElement='off'
-      if('active'in b.dataset){
-      b.style.boxShadow = 'var(--glow-effect)';
-      b.style.transform = 'scale(1.02)';
-    }
     if('normal' in b.dataset){
+
       gridElement.forEach(div=>{
-        div.style.backgroundColor=gridColorChanger.value 
+
+        div.style.backgroundColor=gridColorChanger.value
+
       div.addEventListener("mouseover",e=>{
+
         if(mousedown) e.target.style.background = input.value;
+
       }),
+
       div.addEventListener("mousedown", (e) => {
+
         e.target.style.background = input.value;
+
       });
 
+
+
       })
+
     }
     if('rainbow' in b.dataset){
+
         const r = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Red
+
         const g = Math.floor(Math.random() * 256); // Random number between 0 and 255 for Green
+
         const b = Math.floor(Math.random() * 256);
+
         newBackground=`rgb(${r}, ${g}, ${b});`
+
         gridElement.forEach(element=>{
+
           element.addEventListener("mouseover",e=>{
+
           if(mousedown) e.target.style.background =newBackground;
+
         }),
+
         element.addEventListener("mousedown", (e) => {
+
           e.target.style.background = newBackground;
+
         });
 
+
+
         })
-        
-
-    }
-      container.append(div)
-    }
-    container.style.gridTemplateColumns=`repeat(${size},1fr)`
-    container.style.gridTemplateRows=`repeat(${size},1fr)`
-  }
-addGrid(desktopGrid,16)
-addGrid(mobileGrid,16)
-
-
-// buttons
-let activeMode=document.querySelector('[data-active]')
-let colorModes=document.querySelector('[data-colors]')
-let colorModesButtons=colorModes.querySelectorAll('[data-carousel-button]')
-
-
-gridElement=document.querySelectorAll('[data-grid-element]')
-colorModesButtons.forEach((b)=>{
-  b.addEventListener("click",()=>{
-    colorModesButtons.forEach(b=>{
-      delete b.dataset.active
-      b.style.boxShadow = '';
-      b.style.transform = '';
-    })
-    b.dataset.active=''
-  })
-})
-
-
-function resetGrid(){
-  gridElement.forEach(element=>{
-    element.style.background=gridColorChanger.value
-  })
+      }
+  
 }
-let clearButton=document.querySelector('[data-clear]')
-clearButton.addEventListener("click",resetGrid)
 
+// --- INITIALIZATION ---
+function init() {
+  // 1. Setup Mouse Tracking
+  document.addEventListener("mousedown", () => isMouseDown = true);
+  document.addEventListener("mouseup", () => isMouseDown = false);
 
-let numberSize=document.querySelectorAll('[data-number]')
-let sizeSlider=document.querySelector('[data-size]')
+  // 2. Launch Features
+  initTitleEffects();
+  createGrid(desktopGrid, 16);
+  createGrid(mobileGrid, 16);
 
-function resetSize(){
-  numberSize.forEach(num=>{
-    num.textContent=sizeSlider.value
-  })
-  addGrid(desktopGrid,sizeSlider.value)
-  addGrid(mobileGrid,sizeSlider.value)
+  // 3. Event Listeners
+  sizeSlider.addEventListener('input', updateGridSize);
+  
+  // ...
 }
-sizeSlider.addEventListener('input',resetSize)
-sizeSlider.addEventListener('mousedown',resetGrid)
 
+init();
